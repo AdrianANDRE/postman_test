@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "8561badc-db7c-4101-96ee-557d8277378f",
+		"name": "CollectionTestsE2EGitLab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1_Execute_Action",
+			"item": [
+				{
+					"name": "1_EA_PassingTest_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"postman-samples\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gitlab.com/api/v4/projects/29428053",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"projects",
+								"29428053"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2_Postman_Action",
+			"item": [
+				{
+					"name": "2_PA_PassingTest_01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"postman-samples\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gitlab.com/api/v4/projects/29428053",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"projects",
+								"29428053"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2_PA_PassingTest_02_Environment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"postman-samples\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gitlab.com/api/v4/projects/{{DS_id}}",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"projects",
+								"{{DS_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4_Params_Action_Environment",
+			"item": [
+				{
+					"name": "4_PARAMS_PassingTest_01_Environment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"postman-samples\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that DS_id is 29428053\", function () {\r",
+									"    var var1 = 29428053;\r",
+									"    pm.expect(var1).to.eql(parseInt(pm.environment.get(\"DS_id\")));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gitlab.com/api/v4/projects/{{DS_id}}",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"projects",
+								"{{DS_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4_PARAMS_PassingTest_02_CUF_Community",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that DS_id is 29428053\", function () {\r",
+									"    var var1 = 29428053;\r",
+									"    pm.expect(var1).to.eql(parseInt(pm.environment.get(\"DS_id\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that TC_CUF_postman_tc is 29428053\", function () {\r",
+									"    var var1 = parseInt(pm.environment.get(\"DS_id\")) * 10;\r",
+									"    pm.expect(var1).to.eql(parseInt(pm.environment.get(\"TC_CUF_postman_tc\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that DSNAME is 'JDD_E2E_POSTMAN'\", function () {\r",
+									"    var var1 = \"JDD_E2E_POSTMAN\";\r",
+									"    pm.expect(var1).to.eql(pm.environment.get(\"DSNAME\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that TC_REFERENCE is 'POSTMAN_CUF_COMMUNITY'\", function () {\r",
+									"    var var1 = \"POSTMAN_CUF_COMMUNITY\";\r",
+									"    pm.expect(var1).to.eql(pm.environment.get(\"TC_REFERENCE\"));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gitlab.com/api/v4/projects/{{DS_id}}",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"projects",
+								"{{DS_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4_PARAMS_PassingTest_03_CUF_Premium",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that CPG_CUF_postman_cpg is 'Examples of Postman tests'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.description).to.eql(pm.environment.get(\"CPG_CUF_postman_cpg\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that IT_CUF_postman_ite is 'postman-samples'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql(pm.environment.get(\"IT_CUF_postman_ite\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that TS_CUF_postman_ts include 'test-samples'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name_with_namespace).to.include(pm.environment.get(\"TS_CUF_postman_ts\"));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gitlab.com/api/v4/projects/{{DS_id}}",
+							"protocol": "https",
+							"host": [
+								"gitlab",
+								"com"
+							],
+							"path": [
+								"api",
+								"v4",
+								"projects",
+								"{{DS_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

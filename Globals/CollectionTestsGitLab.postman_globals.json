@@ -1,0 +1,19 @@
+{
+	"id": "eee86f80-1e22-4cfc-8947-b5602ee8f111",
+	"values": [
+		{
+			"key": "gid",
+			"value": "29428053",
+			"enabled": true
+		},
+		{
+			"key": "DS_gid",
+			"value": "29428053",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2021-10-13T09:30:00.366Z",
+	"_postman_exported_using": "Postman/8.12.1"
+}
